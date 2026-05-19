@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tile Match Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        
+        <div id="top-ui">
+            <div id="level-display">Level 1</div>
+            <div id="coin-count">🪙 0 | 💎 0</div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="splash-screen" class="overlay" style="z-index: 200; background: #1a1a1a; color: white;">
+            <h1 style="font-size: 2.5rem; letter-spacing: 6px; text-align: center; margin: 0;">
+                NOVAFORGE
+                <br>
+                <span style="font-size: 1.2rem; color: #ff8b94; font-weight: 300; letter-spacing: 8px;">STUDIOS</span>
+            </h1>
+        </div>
+
+        <div id="main-menu" class="overlay hidden" style="z-index: 100;">
+            <button id="btn-settings" class="menu-btn" style="position: absolute; top: 20px; right: 20px; padding: 10px 15px; border-radius: 50%;">⚙️</button>
+            <div class="glass-panel">
+                <h1 class="game-title">TILE MATCH</h1>
+                <button id="btn-play" class="menu-btn">Play Game</button>
+                <button id="btn-shop" class="menu-btn">Tilesets</button>
+                
+                <div class="referral-banner">
+                    <button id="btn-invite" style="background: none; border: none; color: white; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                        💌 Invite Friends <br>
+                        <span style="font-size: 0.8rem; font-weight: normal;">Earn 1 💎 per invite (0/10 Today)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="shop-menu" class="overlay hidden" style="z-index: 150;">
+            <button id="btn-close-shop" class="close-btn" style="position: absolute; top: 20px; left: 20px; font-size: 2rem; background: none; border: none; color: #ff8b94; cursor: pointer;">⬅</button>
+            <h2 style="color: white; text-shadow: 1px 1px 2px #333;">Select Tileset</h2>
+            <div class="tileset-grid"></div>
+        </div>
+
+        <div id="win-screen" class="overlay hidden" style="z-index: 150;">
+            <div class="glass-panel">
+                <h2 style="color: #ff8b94; font-size: 2.5rem; margin-bottom: 10px;">LEVEL CLEARED!</h2>
+                <div id="win-coins-display" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 30px;">+4 Coins!</div>
+                <button id="btn-next-level" class="menu-btn">Next Level</button>
+                <button id="btn-home" class="menu-btn" style="background: #ccc; color: #333;">Main Menu</button>
+            </div>
+        </div>
+
+        <div id="settings-screen" class="overlay hidden" style="z-index: 250;">
+            <div class="glass-panel" style="color: white; width: 80%; max-width: 300px;">
+                <h2 style="margin-bottom: 30px;">Settings</h2>
+                <div class="setting-row">
+                    <span>Music</span>
+                    <label class="switch"><input type="checkbox" id="toggle-music"><span class="slider round"></span></label>
+                </div>
+                <div class="setting-row">
+                    <span>Sound Effects</span>
+                    <label class="switch"><input type="checkbox" id="toggle-sfx"><span class="slider round"></span></label>
+                </div>
+                <div class="setting-row">
+                    <span>Vibrations</span>
+                    <label class="switch"><input type="checkbox" id="toggle-vibration"><span class="slider round"></span></label>
+                </div>
+                <button id="btn-close-settings" class="menu-btn" style="margin-top: 30px; width: 100%;">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="src/levels.js"></script>
+    <script src="src/tile.js"></script>
+    <script src="src/particles.js"></script>
+    <script src="src/queueManager.js"></script>
+    <script src="src/levelManager.js"></script>
+    <script src="src/shop.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>
